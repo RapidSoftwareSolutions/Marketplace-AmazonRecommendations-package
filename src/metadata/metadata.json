@@ -1,0 +1,201 @@
+{
+  "package": "AmazonRecommendations",
+  "tagline": "Amazon Recommendations API",
+  "description": "The Recommendations API section of Amazon MWS enables you to programmatically retrieve Amazon Selling Coach recommendations by recommendation category. A recommendation is an actionable, timely, and personalized opportunity to increase your sales and performance.",
+  "image": "http://logo.clearbit.com/amazon.com",
+  "repo": "https://github.com/RapidSoftwareSolutions/Marketplace-AmazonRecommendations-package",
+  "accounts": {
+        "domain": "amazon.com",
+        "credentials": [
+            "apiKey",
+            "apiSecret"
+        ]
+    },
+  "blocks": [
+    {
+      "name": "getLastUpdatedTimeForRecommendations",
+      "description": "The GetLastUpdatedTimeForRecommendations operation enables you to check whether there are active recommendations for you in a given recommendation category, and if there are, to check when the recommendations for that category were last updated.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from Amazon."
+        }, {
+          "name": "apiSecret",
+          "type": "credentials",
+          "info": "Required: API secret  obtained from Amazon."
+        }, {
+          "name": "appName",
+          "type": "String",
+          "info": "Required: The Application name."
+        }, {
+          "name": "appVersion",
+          "type": "String",
+          "info": "Required: The version of the application."
+        }, {
+          "name": "region",
+          "type": "String",
+          "test": "EU",
+          "info": "Required: The region for endpoint. For example: EU. Possible values: 'NA' (North America), 'EU' (Europe), 'IN' (India), 'CN' (China), 'JP' (Japan)"
+        }, {
+          "name": "marketplaceId",
+          "type": "String",
+          "info": "Required: The marketplace identifier for the marketplace from which you want to retrieve recommendations."
+        }, {
+          "name": "merchantId",
+          "type": "String",
+          "info": "Required: The merchant ID."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "listRecommendations",
+      "description": "The ListRecommendations operation returns the most recent recommendations for you in a given category or for all categories.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from Amazon."
+        }, {
+          "name": "apiSecret",
+          "type": "credentials",
+          "info": "Required: API secret  obtained from Amazon."
+        }, {
+          "name": "appName",
+          "type": "String",
+          "info": "Required: The Application name."
+        }, {
+          "name": "appVersion",
+          "type": "String",
+          "info": "Required: The version of the application."
+        }, {
+          "name": "region",
+          "type": "String",
+          "test": "EU",
+          "info": "Required: The region for endpoint. For example: EU. Possible values: 'NA' (North America), 'EU' (Europe), 'IN' (India), 'CN' (China), 'JP' (Japan)"
+        }, {
+          "name": "marketplaceId",
+          "type": "String",
+          "info": "Required: The marketplace identifier for the marketplace from which you want to retrieve recommendations."
+        }, {
+          "name": "merchantId",
+          "type": "String",
+          "info": "Required: The merchant ID."
+        }, {
+          "name": "recommendationCategory",
+          "type": "String",
+          "info": "Optional: Specifies a category for the recommendations to retrieve. To retrieve all recommendations, do not specify a value for this parameter."
+        }, {
+          "name": "categoryQueryList",
+          "type": "JSON",
+          "info": "Optional: Array of objects. A list of category-specific filters that you can specify to narrow down the types of recommendations returned for each category. See README for more details."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "listRecommendationsByNextToken",
+      "description": "The ListRecommendationsByNextToken operation returns the next page of recommendations using the NextToken value that was returned by your previous request to either ListRecommendations or ListRecommendationsByNextToken. If NextToken is not returned, there are no more pages to return.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from Amazon."
+        }, {
+          "name": "apiSecret",
+          "type": "credentials",
+          "info": "Required: API secret  obtained from Amazon."
+        }, {
+          "name": "appName",
+          "type": "String",
+          "info": "Required: The Application name."
+        }, {
+          "name": "appVersion",
+          "type": "String",
+          "info": "Required: The version of the application."
+        }, {
+          "name": "region",
+          "type": "String",
+          "test": "EU",
+          "info": "Required: The region for endpoint. For example: EU. Possible values: 'NA' (North America), 'EU' (Europe), 'IN' (India), 'CN' (China), 'JP' (Japan)"
+        }, {
+          "name": "merchantId",
+          "type": "String",
+          "info": "Required: The merchant ID."
+        }, {
+          "name": "nextToken",
+          "type": "String",
+          "info": "Required: A string token returned in the response of your previous request to either ListRecommendations or ListRecommendationsByNextToken."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }, {
+      "name": "getServiceStatus",
+      "description": "The GetServiceStatus operation returns the operational status of the Recommendations API section of Amazon Marketplace Web Service (Amazon MWS). Status values are GREEN, YELLOW, and RED.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Required: API key obtained from Amazon."
+        }, {
+          "name": "apiSecret",
+          "type": "credentials",
+          "info": "Required: API secret  obtained from Amazon."
+        }, {
+          "name": "appName",
+          "type": "String",
+          "info": "Required: The Application name."
+        }, {
+          "name": "appVersion",
+          "type": "String",
+          "info": "Required: The version of the application."
+        }, {
+          "name": "region",
+          "type": "String",
+          "test": "EU",
+          "info": "Required: The region for endpoint. For example: EU. Possible values: 'NA' (North America), 'EU' (Europe), 'IN' (India), 'CN' (China), 'JP' (Japan)"
+        }, {
+          "name": "merchantId",
+          "type": "String",
+          "info": "Required: The merchant ID."
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }
+  ]
+}
