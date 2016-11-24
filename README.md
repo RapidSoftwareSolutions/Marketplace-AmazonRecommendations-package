@@ -54,7 +54,7 @@ The ListRecommendations operation returns the most recent recommendations for yo
     ]
 }
 ```
-### categoryQueryList fields
+#### categoryQueryList fields
 
 | Name | Description | Required | Valid values |
 | --- | --- | --- | --- |
