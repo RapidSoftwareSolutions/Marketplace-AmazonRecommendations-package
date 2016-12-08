@@ -4,6 +4,7 @@
   "description": "The Recommendations API section of Amazon MWS enables you to programmatically retrieve Amazon Selling Coach recommendations by recommendation category. A recommendation is an actionable, timely, and personalized opportunity to increase your sales and performance.",
   "image": "http://logo.clearbit.com/amazon.com",
   "repo": "https://github.com/RapidSoftwareSolutions/Marketplace-AmazonRecommendations-package",
+  "keywords": ["API", "Amazon", "recommendations"],
   "accounts": {
         "domain": "amazon.com",
         "credentials": [
